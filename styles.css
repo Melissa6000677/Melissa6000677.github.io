@@ -1,0 +1,154 @@
+/* Fuente personalizada */
+@font-face {
+    font-family: 'Fuente';
+    src: url('TangoSans.ttf');
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Fuente', sans-serif;
+    font-size: 16px; /* Tamaño de fuente predeterminado */
+}
+
+header {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    max-height: 70px;
+    margin-right: auto;
+}
+
+nav {
+    text-align: center;
+    font-size: 20px; /* Tamaño de fuente del menú */
+}
+
+nav a {
+    color: #000000;
+    text-decoration: none;
+    display: block;
+    padding: 12px 26px ;
+    float: left;
+    border-right: 1px solid #ccc; /* Agregar barras intermedias */
+}
+
+nav:hover {
+    background: linear-gradient(to bottom, #ffffff, #ffffff); /* Degradado al pasar el cursor */
+}
+
+nav a:hover {
+    color: #7f47dd; /* Cambia el color del texto al acercar el cursor */
+    background: linear-gradient(to bottom, #ffffff65, #bebebe); /* Cambiar el fondo con un degradado */
+}
+
+nav a:last-child {
+    border-right: none; /* Quitar la barra del último elemento */
+}
+
+/* Colores de texto específicos para ciertas secciones del menú */
+.menu-link.main-link:hover,
+.menu-link.games-link:hover,
+.menu-link.news-link:hover {
+    color: #f7d12a; /* Página principal, Juegos y Novedades */
+}
+
+.menu-link.about-link:hover,
+.menu-link.work-link:hover {
+    color: #7f47dd; /* Quiénes somos y Trabaja con nosotros */
+}
+
+/* Banner */
+.slider-container {
+    width: 100%;
+    height: 460px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #7f47dd;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.language-button {
+    padding: 10px 20px;
+    background-color: #7f47dd;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Fuente', sans-serif;
+}
+
+/* Secciones */
+.section {
+    padding: 30px;
+    background-color: #f9f9f9;
+    margin-top: 50px;
+    display: none;
+    font-size: 24px; /* Tamaño de fuente más grande para todas las secciones */
+}
+
+/* Estilos específicos para la sección "Sobre Chigu" */
+#sobre-chigu {
+    text-align: center;
+}
+
+#sobre-chigu h2 {
+    color: #7f47dd;
+    margin-bottom: 20px;
+}
+
+/* Centrar el texto de los párrafos dentro de la sección "Sobre Chigu Juegos" */
+#sobre-chigu p {
+    text-align: center;
+    line-height: 3; /* Ajusta el interlineado a tu preferencia */
+    margin-top: 50px; /* Ajusta el margen superior a tu preferencia */
+    padding: 0 100px;
+}
+
+/* Estilos específicos para la sección "Miembros" */
+#miembros {
+    text-align: center;
+}
+
+#miembros h2 {
+    color: #7f47dd;
+    margin-bottom: 20px;
+}
