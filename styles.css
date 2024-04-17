@@ -1,13 +1,34 @@
 /* Fuente personalizada */
+/* Definición de la fuente personalizada */
 @font-face {
     font-family: 'Fuente';
     src: url('TangoSans.ttf');
 }
 
+/* Definición de la fuente TangoSansBold */
+@font-face {
+    font-family: 'TangoSansBold';
+    src: url('TangoSans_Bold.ttf'); /* Cambia 'ruta/a/' por la ubicación real del archivo de fuente */
+}
+
+/* Definición de la fuente Supersonic Rocketship */
+@font-face {
+    font-family: 'Supersonic Rocketship';
+    src: url('Supersonic Rocketship.ttf'); /* Cambia 'ruta/a/' por la ubicación real del archivo de fuente */
+}
+
 /* Estilos generales */
 body {
-    font-family: 'Fuente', sans-serif;
+    margin: 30px; /* Espacio alrededor de todo el contenido */
+    font-family: 'Fuente', sans-serif; /* Usa la fuente personalizada 'Fuente', si no está disponible, usa una fuente sans-serif de respaldo */
+    font-weight: normal;
     font-size: 16px; /* Tamaño de fuente predeterminado */
+}
+
+@media only screen and (max-width: 768px) {
+    .image-container {
+        text-align: center; /* Centra la imagen en dispositivos con un ancho de pantalla de hasta 768px */
+    }
 }
 
 header {
@@ -20,22 +41,52 @@ header {
 }
 
 header img {
-    max-height: 70px;
+    max-height: 75px;
     margin-right: auto;
 }
 
 nav {
     text-align: center;
-    font-size: 20px; /* Tamaño de fuente del menú */
 }
 
 nav a {
+    font-family: 'Supersonic Rocketship', sans-serif;
+    font-size: 32px; /* Tamaño de fuente para elementos <nav> */
+    letter-spacing: 3px;
     color: #000000;
     text-decoration: none;
     display: block;
-    padding: 12px 26px ;
+    padding: 12px 26px;
     float: left;
     border-right: 1px solid #ccc; /* Agregar barras intermedias */
+}
+
+h1 {
+    font-family: 'Supersonic Rocketship', sans-serif;
+    font-weight: normal;
+    font-size: 40px; /* Tamaño de fuente para elementos <h1> */
+    letter-spacing: 3px;
+}
+
+
+
+/* Subtítulos medianos con la fuente TangoSansBold */
+h2 {
+    font-family: 'TangoSansBold', sans-serif;
+    text-align: center;
+    font-size: 32px; /* Tamaño mediano para los subtítulos */
+}
+
+/* Contenido pequeño con la fuente TangoSans */
+.centered-text {
+    text-align: justify; /* O text-align: justify; si prefieres justificar el texto */
+}
+
+p {
+    font-family: 'TangoSans', sans-serif;
+    font-size: 22px; /* Tamaño pequeño para el contenido */
+    letter-spacing: 2px;
+    line-height: 2; /* Espaciado entre líneas */
 }
 
 nav:hover {
@@ -66,11 +117,12 @@ nav a:last-child {
 /* Banner */
 .slider-container {
     width: 100%;
-    height: 460px;
+    height: 100vh; /* Cambia el alto al 100% de la ventana gráfica */
     margin: 0 auto;
     overflow: hidden;
     position: relative;
 }
+
 
 .slide {
     display: none;
@@ -87,7 +139,7 @@ nav a:last-child {
 
 .button-container {
     position: absolute;
-    bottom: 80px;
+    bottom: 150px;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
@@ -97,7 +149,7 @@ nav a:last-child {
     padding: 10px 20px;
     background-color: #7f47dd;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 50px;
     text-decoration: none;
     border: none;
     border-radius: 5px;
@@ -108,40 +160,70 @@ nav a:last-child {
     padding: 10px 20px;
     background-color: #7f47dd;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 28px;
     text-decoration: none;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family: 'Fuente', sans-serif;
+    font-family: 'TangoSans', sans-serif;
+    
+    
 }
 
 /* Secciones */
 .section {
     padding: 30px;
-    background-color: #f9f9f9;
+    background-color: #d1d1d12d;
     margin-top: 50px;
     display: none;
     font-size: 24px; /* Tamaño de fuente más grande para todas las secciones */
 }
 
-/* Estilos específicos para la sección "Sobre Chigu" */
+/* Estilos específicos para la sección "Sobre Chigü Juegos" */
 #sobre-chigu {
-    text-align: center;
+    text-align: center; /* Centra el texto horizontalmente */
+    padding: 50px 100px; /* Aumenta el espacio interno */
+    width: auto; /* El ancho se ajustará automáticamente al contenido */
+    max-width: 100%; /* Establece un ancho máximo igual al ancho de la página */
+    margin: 0 auto; /* Centra horizontalmente el contenedor */
+    background-color: #f9f9f9; /* Opcional: Cambia el color de fondo del contenedor */
+    overflow: hidden; /* Oculta las barras de desplazamiento */
+    position: relative; /* Establece el contexto de posicionamiento para los elementos absolutos */
 }
 
-#sobre-chigu h2 {
-    color: #7f47dd;
-    margin-bottom: 20px;
-}
-
-/* Centrar el texto de los párrafos dentro de la sección "Sobre Chigu Juegos" */
 #sobre-chigu p {
-    text-align: center;
-    line-height: 3; /* Ajusta el interlineado a tu preferencia */
-    margin-top: 50px; /* Ajusta el margen superior a tu preferencia */
-    padding: 0 100px;
+    font-size: 30px; /* Tamaño normal del texto */
+    line-height: 3; /* Ajusta el espaciado entre líneas */
+    max-width: 1600px; /* Limita el ancho del texto para evitar que se extienda demasiado */
+    margin: 0 auto; /* Centra el texto horizontalmente dentro del contenedor */
+    padding: 0 20px; /* Agrega un poco de espacio interno */
 }
+
+.logo-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 1; /* La imagen es visible por defecto */
+    transition: opacity 0.3s ease; /* Agregamos una transición suave */
+}
+
+.text-overlay:hover .logo-img {
+    opacity: 0; /* Hace que la imagen desaparezca al pasar el mouse sobre el contenedor */
+}
+
+.text-overlay p {
+    position: relative;
+    z-index: 2; 
+    opacity: 0; /* El texto está oculto por defecto */
+    transition: opacity 0.3s ease; /* Agregamos una transición suave */
+}
+
+.text-overlay:hover p {
+    opacity: 1; /* Hace que el texto aparezca al pasar el mouse sobre el contenedor */
+}
+
 
 /* Estilos específicos para la sección "Miembros" */
 #miembros {
@@ -152,3 +234,206 @@ nav a:last-child {
     color: #7f47dd;
     margin-bottom: 20px;
 }
+
+#miembros .grid-item img {
+    width: 300px; /* Ajusta el ancho de la imagen según lo necesites */
+    height: auto; /* Esto permite que la altura se ajuste automáticamente manteniendo la proporción */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 20px; /* Espacio entre las celdas */
+}
+
+.grid-item {
+    border: 3px solid #ccc; /* Bordes para visualización */
+    padding: 10px; /* Espaciado interno */
+}
+
+.catalog-container {
+    position: relative;
+    width: 80%; /* Ancho reducido del contenedor */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    overflow: hidden; /* Oculta los elementos que se salen del contenedor */
+    display: flex; /* Usa flexbox para centrar los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+.catalog {
+    display: flex;
+    transition: transform 0.5s ease; /* Agrega una transición suave al deslizamiento */
+}
+
+.game {
+    flex: 0 0 calc(100% / 3); /* Cada juego ocupa el 1/3 del ancho del contenedor */
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.game img {
+    max-width: 100%;
+    height: auto;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: #f7d12a;
+    border: none;
+    color: #000;
+    font-size: 24px; /* Aumentar el tamaño de la flecha */
+    cursor: pointer;
+    padding: 10px;
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+}
+
+.prev:hover,
+.next:hover {
+    background-color: #f7d12a85; /* Aclarar el color al pasar el mouse */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+}
+.prev {
+    left: 20px; /* Ajusta la posición a la izquierda */
+}
+
+.next {
+    right: 20px; /* Ajusta la posición a la derecha */
+}
+
+
+footer {
+    background-color: #000000;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 20px; /* Margen superior */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espaciado entre las imágenes */
+}
+
+.social-icons img {
+    width: 30px; /* Ancho de las imágenes */
+    height: 30px; /* Altura de las imágenes */
+}
+
+.logo img {
+    width: 150px; /* Ancho del logo */
+    margin-top: 10px; /* Margen superior */
+}
+
+.copyright p {
+    font-size: 20px; /* Tamaño de fuente más pequeño */
+}
+
+.terms p {
+    font-size: 20px; /* Tamaño de fuente un poco más grande */
+}
+
+.barra {
+    display: inline-block;
+    width: 1px; /* Ancho de la barra */
+    height: 10px; /* Altura de la barra */
+    background-color: rgb(255, 255, 255); /* Color de la barra */
+    margin: 0 10px; /* Espaciado horizontal */
+}
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'TangoSansBold', sans-serif; /* Utiliza la misma fuente que en el resto de la página */
+    font-size: 24px;
+}
+
+input[type="text"],
+input[type="email"] {
+    
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'TangoSans', sans-serif; /* Utiliza la misma fuente que en el resto de la página */
+    font-size: 20px;
+}
+
+input[type="submit"] {
+    background-color: #f7d12a;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'TangoSans', sans-serif; /* Utiliza la misma fuente que en el resto de la página */
+    font-size: 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    align-items: center; /* Alinea los elementos verticalmente */
+}
+
+.form-container {
+    width: 58%; /* Ancho del formulario */
+}
+
+.image-container {
+    width: 40%; /* Ancho de la imagen */
+    text-align: center; /* Alinea la imagen a la derecha dentro de su contenedor */
+}
+
+.image-container img {
+    max-width: 90%; /* Asegura que la imagen no supere el ancho del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin: 30px
+}
+
+#scroll-to-top-button {
+    position: fixed; /* Permanece fijo en la ventana gráfica */
+    bottom: 20px; /* Distancia desde el borde inferior de la ventana */
+    right: 20px; /* Distancia desde el borde derecho de la ventana */
+    z-index: 999; /* Asegura que esté por encima de otros elementos */
+    background-color: #7f47dd; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espacio interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+    font-size: 32px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cursor de puntero al pasar el ratón */
+}
+
+#scroll-to-top-button:hover {
+    background-color: #f7d12a; /* Cambia el color de fondo al pasar el ratón */
+}
+
+@keyframes scroll-up {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

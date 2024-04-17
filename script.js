@@ -52,67 +52,105 @@ window.addEventListener('hashchange', function() {
 });
 
 window.onload = function() {
-    var subsections = document.querySelectorAll('.subsection');
+    var sections = document.querySelectorAll('.section');
 
-    // Ocultar todas las subsecciones al cargar la página
-    subsections.forEach(function(subsection) {
-        subsection.style.display = 'none';
+    // Ocultar todas las secciones al cargar la página
+    sections.forEach(function(section) {
+        section.style.display = 'none';
     });
 
-    // Mostrar las subsecciones correspondientes cuando cambie el hash
-    window.addEventListener('hashchange', function() {
-        var hash = window.location.hash;
-        var currentSection = document.querySelector(hash);
-        var currentSubsections = currentSection.querySelectorAll('.subsection');
+    // Función para mostrar la sección correspondiente al hacer clic en un enlace del menú
+    function showSection(event) {
+        var clickedLinkId = event.target.getAttribute('href'); // Obtener el href del enlace clicado
+        var clickedSection = document.querySelector(clickedLinkId); // Obtener la sección correspondiente al href
 
-        // Ocultar todas las subsecciones
-        subsections.forEach(function(subsection) {
-            subsection.style.display = 'none';
+        // Ocultar todas las secciones
+        sections.forEach(function(section) {
+            section.style.display = 'none';
         });
 
-        // Mostrar las subsecciones correspondientes a la sección actual
-        currentSubsections.forEach(function(subsection) {
-            subsection.style.display = 'block';
-        });
-    });
+        // Mostrar la sección correspondiente
+        clickedSection.style.display = 'block';
+    }
 
-    // Define los contenidos en español e inglés
-const contentES = {
-    'language-button': 'Español',
-    'pagina-principal': 'Página principal',
-    'quienes-somos': 'Quiénes somos',
-    'juegos': 'Juegos',
-    'trabaja-con-nosotros': 'Trabaja con nosotros',
-    'novedades': 'Novedades'
+    // Agregar evento click a todos los enlaces del menú
+    var menuLinks = document.querySelectorAll('.menu-link');
+    menuLinks.forEach(function(link) {
+        link.addEventListener('click', showSection);
+    });
 };
 
-const contentEN = {
-    'language-button': 'English',
-    'pagina-principal': 'Home',
-    'quienes-somos': 'About Us',
-    'juegos': 'Games',
-    'trabaja-con-nosotros': 'Join Us',
-    'novedades': 'News'
+
+const catalog = document.querySelector('.catalog');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let currentIndex = 0;
+
+const moveCatalog = (direction) => {
+    const catalogWidth = catalog.clientWidth;
+    const numItems = catalog.children.length;
+    const itemWidth = catalogWidth / numItems;
+    const maxIndex = numItems; 
+    if (direction === 'prev' && currentIndex > 0) {
+        currentIndex--;
+    } else if (direction === 'next' && currentIndex < maxIndex) {
+        currentIndex++;
+    }
+
+    const offset = -currentIndex * itemWidth;
+    catalog.style.transform = `translateX(${offset}px)`;
 };
 
-// Función para cambiar el idioma de la página
-function changeLanguage() {
-    const currentLanguage = document.documentElement.lang;
-    const newLanguage = currentLanguage === 'es' ? 'en' : 'es'; // Alternar entre español e inglés
+prevBtn.addEventListener('click', () => moveCatalog('prev'));
+nextBtn.addEventListener('click', () => moveCatalog('next'));
 
-    // Obtener el contenido según el nuevo idioma
-    const content = newLanguage === 'es' ? contentES : contentEN;
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que se envíe el formulario de forma predeterminada
 
-    // Actualizar el contenido de los elementos HTML
-    Object.entries(content).forEach(([id, text]) => {
-        document.getElementById(id).textContent = text;
-    });
+    // Aquí podrías agregar código para enviar los datos del formulario a través de AJAX si lo prefieres
 
-    // Cambiar el idioma en el atributo lang del HTML
-    document.documentElement.lang = newLanguage;
+    // Muestra el mensaje de confirmación y limpia el formulario
+    document.getElementById('mensaje_confirmacion').style.display = 'block';
+    document.querySelector('form').reset();
+   });
+
+function moverDerecha() {
+    var imagen = document.getElementById("imagen");
+    imagen.style.transform = "translateX(100%)"; /* Mueve la imagen hasta el borde derecho de su contenedor */
 }
 
-// Evento click para cambiar el idioma al hacer clic en el botón de idioma
-document.getElementById('language-button').addEventListener('click', changeLanguage);
+function resetPosition() {
+    var imagen = document.getElementById("imagen");
+    imagen.style.transform = "translateX(0)"; /* Resetea la posición de la imagen */
+}
+const logoImg = document.querySelector('.logo-img');
+const textOverlay = document.querySelector('.text-overlay');
 
-};
+logoImg.addEventListener('mouseenter', () => {
+    textOverlay.style.opacity = '0'; // Oculta el texto al pasar el mouse sobre la imagen
+});
+
+logoImg.addEventListener('mouseleave', () => {
+    textOverlay.style.opacity = '1'; // Muestra el texto al retirar el mouse de la imagen
+});
+
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que se envíe el formulario de forma predeterminada
+
+    // Aquí podrías agregar código para enviar los datos del formulario a través de AJAX si lo prefieres
+
+    // Muestra el mensaje de confirmación y limpia el formulario
+    document.getElementById('mensaje_confirmacion').style.display = 'block';
+    document.querySelector('form').reset();
+   });
+
+document.getElementById("scroll-to-top-button").addEventListener("click", function() {
+    const scrollDuration = 500; // Duración total del desplazamiento en milisegundos
+    const scrollStep = -window.scrollY / (scrollDuration / 15); // Cálculo del valor de desplazamiento en cada iteración
+    const scrollInterval = setInterval(() => {
+        if (window.scrollY === 0) {
+            clearInterval(scrollInterval);
+        }
+        window.scrollBy(0, scrollStep); // Desplazamiento suave hacia arriba
+    }, 20); // Intervalo reducido para una transición más suave
+});
