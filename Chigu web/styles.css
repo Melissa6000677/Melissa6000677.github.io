@@ -1,0 +1,613 @@
+/* Variables globales */
+:root {
+    --primary-color: #7f47dd;
+    --secondary-color: #f7d12a;
+    --text-color: #000000;
+    --background-color: #ffffff;
+    --font-size-base: 14px;
+    --font-family-main: 'Fuente', sans-serif;
+    --font-family-secondary: 'Supersonic Rocketship', sans-serif;
+}
+
+/* Fuentes personalizadas */
+@font-face {
+    font-family: 'Fuente';
+    src: url('TangoSans.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'TangoSansBold';
+    src: url('TangoSans_Bold.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Supersonic Rocketship';
+    src: url('Supersonic Rocketship.ttf') format('truetype');
+    font-display: swap;
+}
+
+/* Estilos generales */
+body {
+    margin: 30px;
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-base);
+}
+
+/* Estilos para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+    nav a {
+        font-size: 1.5rem;
+    }
+    .slider-container {
+        height: 70vh;
+    }
+    .section {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 480px) {
+    nav a {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+    .button {
+        font-size: 2rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header img {
+    max-height: 75px;
+    margin-right: auto;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    text-align: center;
+}
+nav a {
+    font-family: 'Supersonic Rocketship', sans-serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    color: #000000;
+    text-decoration: none;
+    display: block;
+    padding: 12px 26px;
+    float: left;
+    border-right: 1px solid #ccc;
+}
+nav:hover {
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
+}
+nav a:hover {
+    color: #7f47dd;
+    background: linear-gradient(to bottom, #ffffff65, #bebebe);
+}
+nav a:last-child {
+    border-right: none;
+}
+/* Otros estilos específicos para enlaces en el menú */
+.menu-link.main-link:hover,
+.menu-link.games-link:hover,
+.menu-link.news-link:hover {
+    color: #f7d12a;
+}
+.menu-link.about-link:hover,
+.menu-link.work-link:hover {
+    color: #7f47dd;
+}
+
+/* Estilos para encabezados y subtítulos */
+h1,
+h2 {
+    font-family: 'Supersonic Rocketship', sans-serif;
+    letter-spacing: 3px;
+}
+h1 {
+    font-size: 36px;
+}
+h2 {
+    font-family: 'TangoSansBold', sans-serif;
+    text-align: center;
+    font-size: 28px;
+}
+
+/* Estilos para contenido de texto */
+.centered-text {
+    text-align: justify;
+}
+p {
+    font-family: 'TangoSans', sans-serif;
+    font-size: 1.125em;
+    letter-spacing: 2px;
+    line-height: 2;
+}
+
+/* Estilos para la sección de banner */
+.slider-container {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.button-container {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+.button,
+.language-button {
+    padding: 10px 20px;
+    background-color: #7f47dd;
+    color: #ffffff;
+    font-family: 'TangoSans', sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Otros estilos para secciones y contenido */
+.section {
+    padding: 30px;
+    background-color: #d1d1d12d;
+    margin-top: 50px;
+    display: none;
+    font-size: 22px;
+}
+/* Estilos específicos para ciertas secciones */
+#sobre-chigu {
+    text-align: center;
+    padding: 50px 100px;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    position: relative;
+}
+#sobre-chigu p {
+    font-size: 30px;
+    line-height: 3;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 1; /* La imagen es visible por defecto */
+    transition: opacity 0.3s ease; /* Agregamos una transición suave */
+}
+
+.text-overlay:hover .logo-img {
+    opacity: 0; /* Hace que la imagen desaparezca al pasar el mouse sobre el contenedor */
+}
+
+.text-overlay p {
+    position: relative;
+    z-index: 2; 
+    opacity: 0; /* El texto está oculto por defecto */
+    transition: opacity 0.3s ease; /* Agregamos una transición suave */
+}
+
+.text-overlay:hover p {
+    opacity: 1; /* Hace que el texto aparezca al pasar el mouse sobre el contenedor */
+}
+
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #000000;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+.logo img {
+    width: 150px;
+    margin-top: 10px;
+}
+/* Otras secciones y estilos específicos */
+/* Banner */
+.slider-container {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.button-container {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+.button,
+.language-button {
+    padding: 10px 20px;
+    background-color: #7f47dd;
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'TangoSans', sans-serif;
+}
+
+/* Secciones */
+.section {
+    padding: 30px;
+    background-color: #d1d1d12d;
+    margin-top: 50px;
+    display: none;
+    font-size: 22px;
+}
+/* Estilos específicos para la sección "Sobre Chigü Juegos" */
+#sobre-chigu {
+    text-align: center;
+    padding: 50px 100px;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    position: relative;
+    animation: fadeIn 2s ease-in-out; /* Animación de entrada */
+}
+#sobre-chigu p {
+    font-size: 30px;
+    line-height: 3;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos para la sección "Miembros" */
+#miembros {
+    text-align: center;
+}
+#miembros h2 {
+    color: #7f47dd;
+    margin-bottom: 20px;
+}
+#miembros .grid-item img {
+    width: 300px; /* Ajusta el ancho de la imagen según lo necesites */
+    height: auto; /* Esto permite que la altura se ajuste automáticamente manteniendo la proporción */
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 20px; /* Espacio entre las celdas */
+}
+
+.grid-item {
+    border: 3px solid #ccc; /* Bordes para visualización */
+    padding: 10px; /* Espaciado interno */
+}
+
+/* Estilos para la sección "Catálogo de Juegos" */
+#catalogo-juegos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.juego {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+}
+.contenido img {
+    width: 50%;
+}
+.game-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideInUp 1.5s ease-in-out;
+}
+.trailer {
+    width: 75vw; /* Ancho igual al ancho de la ventana del navegador */
+    height: 75vh; /* Altura igual a la altura de la ventana del navegador */
+    border: 5px solid #f7d12a; /* Borde dorado */
+    border-radius: 10px;
+    overflow: hidden; /* Para asegurarse de que el borde se muestre correctamente */
+    position: relative; /* Para permitir el posicionamiento del iframe */
+}
+
+.trailer iframe {
+    width: 100%; /* El video ocupa todo el ancho del contenedor */
+    height: 100%; /* El video ocupa todo el alto del contenedor */
+    display: block; /* Elimina cualquier espacio adicional */
+    margin: 0; /* Elimina cualquier margen */
+    padding: 0; /* Elimina cualquier relleno */
+    border: none; /* Elimina cualquier borde */
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.description {
+    margin-bottom: 20px;
+    margin-left: 200px; /* Ajustamos el margen izquierdo */
+    margin-right: 200px; /* Ajustamos el margen derecho */
+    font-size: 30px; /* Tamaño de la letra más grande */
+    padding: 10px; /* Ajustamos el espacio interno */
+}
+
+.covers-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px; /* Ajustamos el margen superior */
+    margin-bottom: 20px; /* Ajustamos el margen inferior */
+}
+
+.cover-image {
+    max-width: 30%;
+    height: auto;
+    position: relative; /* Cambiamos a posición relativa */
+}
+
+#modelo-3d {
+    width: 100%;
+    height: 900px; /* Ajusta la altura según tus necesidades */
+    margin-bottom: 20px; /* Añade espacio inferior para separar del siguiente contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.catalog-container {
+    position: relative;
+    width: 80%; /* Ancho reducido del contenedor */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    overflow: hidden; /* Oculta los elementos que se salen del contenedor */
+    display: flex; /* Usa flexbox para centrar los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+.catalog {
+    display: flex;
+    transition: transform 0.5s ease; /* Agrega una transición suave al deslizamiento */
+}
+.game {
+    flex: 0 0 calc(100% / 3); /* Cada juego ocupa el 1/3 del ancho del contenedor */
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.game img {
+    max-width: 100%;
+    height: auto;
+}
+.prev,
+.next {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: #f7d12a;
+    border: none;
+    color: #000;
+    font-size: 24px; /* Aumentar el tamaño de la flecha */
+    cursor: pointer;
+    padding: 10px;
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+}
+.prev:hover,
+.next:hover {
+    background-color: #f7d12a85; /* Aclarar el color al pasar el mouse */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+}
+.prev {
+    left: 20px; /* Ajusta la posición a la izquierda */
+}
+.next {
+    right: 20px; /* Ajusta la posición a la derecha */
+}
+/* Botón de pre-ordenar */
+.preorder-button {
+    font-family: 'TangoSans', sans-serif;
+    background-color: #f7d12a;
+    color: #000000;
+    padding: 25px 40px;
+    font-size: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.preorder-button:hover {
+    background-color: #ffd700;
+    transform: scale(1.05);
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #000000;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+.logo img {
+    width: 150px;
+    margin-top: 10px;
+}
+.barra {
+    display: inline-block;
+    width: 1px; /* Ancho de la barra */
+    height: 10px; /* Altura de la barra */
+    background-color: rgb(255, 255, 255); /* Color de la barra */
+    margin: 0 10px; /* Espaciado horizontal */
+}
+/* Estilos para formularios */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'TangoSansBold', sans-serif;
+    font-size: 24px;
+}
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'TangoSans', sans-serif;
+    font-size: 20px;
+}
+input[type="submit"] {
+    background-color: #f7d12a;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'TangoSans', sans-serif;
+    font-size: 20px;
+}
+/* Estilos para la disposición de contenido */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form-container {
+    width: 58%;
+}
+.image-container {
+    width: 40%;
+    text-align: center;
+}
+.image-container img {
+    max-width: 90%;
+    height: auto;
+    margin: 30px;
+}
+
+#scroll-to-top-button {
+    position: fixed; /* Permanece fijo en la ventana gráfica */
+    bottom: 20px; /* Distancia desde el borde inferior de la ventana */
+    right: 20px; /* Distancia desde el borde derecho de la ventana */
+    z-index: 999; /* Asegura que esté por encima de otros elementos */
+    background-color: #7f47dd; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espacio interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+    font-size: 32px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cursor de puntero al pasar el ratón */
+}
+
+#scroll-to-top-button:hover {
+    background-color: #f7d12a; /* Cambia el color de fondo al pasar el ratón */
+}
+
+@keyframes scroll-up {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

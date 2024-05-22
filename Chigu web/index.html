@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chigü Juegos</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+</head>
+
+<body>
+
+    <button id="scroll-to-top-button" title="Subir" aria-label="Subir">
+        &#9650; <!-- Flecha hacia arriba: ↑ -->
+    </button>
+    
+
+    <header>
+        <div>
+            <img src="Logo.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="#pagina-principal" class="menu-link main-link">Página principal</a>
+            <a href="#quienes-somos" class="menu-link about-link">Quiénes somos</a>
+            <a href="#juegos" class="menu-link games-link">Juegos</a>
+            <a href="#trabaja-con-nosotros" class="menu-link work-link">Trabaja con nosotros</a>
+        </nav>
+        
+        <button class="language-button">Idioma</button>
+    </header>
+
+    <div class="slider-container">
+        <div class="slide">
+            <img src="Banner1.png" alt="Imagen 1">
+        </div>
+        <div class="slide">
+            <img src="Banner2.png" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="Banner3.png" alt="Imagen 3">
+        </div>
+        <div class="button-container">
+            <a href="#juegos" class="button">¡Comprar ahora!</a>
+        </div>
+    </div>
+
+    <section id="quienes-somos" class="section">
+        <h1>Quiénes somos</h1>
+        <section id="sobre-chigu" class="subsection">
+            <div class="text-overlay">
+                <img src="LogoSolo.png" alt="Logo" class="logo-img">
+                <p>
+                    Chigü es una empresa colombiana especializada en desarrollar videojuegos RPG con el propósito de difundir el conocimiento sobre la industria de los videojuegos en Colombia. Nuestra misión es promover la cultura y la historia colombiana entre las nuevas generaciones a través de experiencias de juego inmersivas. Nos dedicamos a crear juegos que entretienen, educan y celebran la diversidad y el patrimonio de Colombia. ¡Sumérgete en la aventura con nosotros y descubre el emocionante mundo que Chigü puede ofrecerte!
+                </p>
+            </div>
+        </section>
+    <style>
+        .image-container {
+            text-align: center; /* Centra horizontalmente la imagen */
+        }
+    </style>
+        <section id="miembros" class="subsection">
+            <h1>Miembros</h1>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h2>Luisa "Ratapunk"</h2>
+                    <p>CEO y Game Producer</p>
+                    <img src="Miembro1.png" alt="Miembro 1">
+                </div>
+                <div class="grid-item">
+                    <h2>Daniel "Mr.Mistake"</h2>
+                    <p>Game Designer</p>
+                    <img src="Miembro2.png" alt="Miembro 2">
+                </div>
+                <div class="grid-item">
+                    <h2>Sofía "Sofo"</h2>
+                    <p>Game Developer</p>
+                    <img src="Miembro3.png" alt="Miembro 2">
+                </div>
+                <div class="grid-item">
+                    <h2>Leidy "Katepin"</h2>
+                    <p>Marketing y Community Manager</p>
+                    <img src="Miembro4.png" alt="Miembro 2">
+                </div>
+                <div class="grid-item">
+                    <h2>Melissa "Morita"</h2>
+                    <p>Game Tester</p>
+                    <img src="Miembro5.png" alt="Miembro 2">
+                </div>
+                <div class="grid-item">
+                    <h2>Paola "Doncella"</h2>
+                    <p>Game Artist</p>
+                    <img src="Miembro6.png" alt="Miembro 2">
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section id="juegos" class="section">
+        <!-- Nueva sección del próximo lanzamiento -->
+        <section id="nuevo-juego">
+            <div class="game-details">
+                <!-- Aquí se colocará el modelo 3D -->
+                <div id="modelo-3d">
+                    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.3.8/build/spline-viewer.js"></script>
+                    <spline-viewer url="https://prod.spline.design/p2oYBI8vq0P2MNue/scene.splinecode"></spline-viewer>
+                </div>
+                <h1 style="font-size: 3em; color: #000000; text-align: center; letter-spacing: 0.1em;">
+                    <span style="position: relative; display: inline-block; padding: 0 2px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+                        ¡<span>R</span><span>Á</span><span>P</span><span>I</span><span>D</span><span>O</span>
+                    </span>
+                    <span style="position: relative; display: inline-block; padding: 0 2px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+                        Y
+                    </span>
+                    <span style="position: relative; display: inline-block; padding: 0 2px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+                        <span>C</span><span>H</span><span>I</span><span>G</span><span>Ü</span><span>I</span><span>R</span><span>O</span><span>S</span><span>O</span>
+                    </span>
+                    <span style="position: relative; display: inline-block; padding: 0 2px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+                        !
+                    </span>
+                </h1>
+                <div class="trailer">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Cj6WaFY9huE" frameborder="0" allowfullscreen></iframe>
+                </div>
+    
+                <div class="container">
+                    <div class="description">
+                        <p class="game-description">Acompaña a Chigü, un adorable repartidor, en su misión de entregar paquetes y mensajes en una encantadora región. Explora cinco pintorescas localizaciones, interactúa con simpáticos animales y escucha historias y chismes que revelan los secretos de la zona. Ayuda a Chigü a cumplir con su labor mientras descubres caminos ocultos y enfrentas pequeños desafíos en esta acogedora y unida comunidad.</p>
+                    </div>
+                    
+                    <div class="covers-container">
+                        <img src="chigucaratula.jpg" alt="Carátula del primer juego" class="cover-image" id="first-cover">
+                        <img src="chigucaratulacontra.jpg" alt="Carátula del segundo juego" class="cover-image hidden" id="second-cover">
+                    </div>
+                    <button class="preorder-button">Pre-ordenar ahora</button>
+                </div>
+                
+             
+        </section>
+        <h1>Nuestros Juegos</h1>
+        <div class="catalog-container">
+            <div class="catalog">
+                <div class="game">
+                    <img src="Juego2.jpg" alt="Juego 1">
+                    <h2>Aventuras Salvajes</h2>
+                    <p>Sumérgete en la vida salvaje. Explora exuberantes paisajes naturales mientras guías a estos adorables capibaras a través de emocionantes desafíos y descubrimientos. ¡Prepárate para una experiencia de juego inolvidable en la naturaleza!</p>
+                </div>
+                <div class="game">
+                    <img src="Juego3.jpg" alt="Juego 2">
+                    <h2>Travesía Pirata en Alta Mar</h2>
+                    <p>Únete a una emocionante travesía en alta mar. Embárcate en una aventura llena de saqueos, tesoros y batallas navales, todo protagonizado por capibaras audaces y valientes. ¡Conviértete en el pirata más temido de los mares capibaras!</p>
+                </div>
+                <div class="game">
+                    <img src="Juego4.jpg" alt="Juego 3">
+                    <h2>Delicias del Pantano</h2>
+                    <p>En "Delicias del Pantano", serás el chef principal en una cocina. Cocina platos exquisitos junto a encantadores capibaras mientras exploras nuevos sabores e ingredientes. ¡Prepara tus sentidos para una experiencia culinaria inolvidable!</p>
+                </div>
+                <div class="game">
+                    <img src="Juego5.jpg" alt="Juego 4">
+                    <h2>Desafío en el Dojo</h2>
+                    <p>Enfréntate a desafíos épicos y demuestra tu habilidad en "Desafio en el Dojo". Acompaña a estos capibaras expertos en karate en su viaje para convertirse en los maestros definitivos del dojo. ¡Prepárate para golpes, patadas y mucha acción!</p>
+                </div>
+                <div class="game">
+                    <img src="Juego6.jpg" alt="Juego 5">
+                    <h2>Ritmo Salvaje</h2>
+                    <p>Vive la emoción del rock. Únete a una banda de capibaras talentosos mientras recorren el mundo, conquistando escenarios y corazones con su música enérgica y sus actuaciones electrizantes. ¡Prepárate para una experiencia musical única con estos capibaras estrella del rock!</p>
+                </div>
+                <div class="game">
+                    <img src="Juego7.jpg" alt="Juego 6">
+                    <h2>Aventuras Campestres</h2>
+                    <p>Descubre la vida tranquila y acogedora del campo. Únete a estos capibaras trabajadores en su granja, donde cultivarán, criarán animales y resolverán divertidos desafíos mientras disfrutan de la serenidad y la belleza de la vida rural. ¡Ven y únete a la diversión en la granja de los capibaras!</p>
+                </div>
+            </div>
+            <div class="arrow-buttons">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="trabaja-con-nosotros" class="section">
+        <h1>Trabaja con nosotros</h1>
+        <div class="content">
+            <div class="form-container">
+                <form action="/enviar_datos.php" method="post">
+                    <label for="nombres">Nombres:</label>
+                    <input type="text" id="nombres" name="nombres" required><br><br>
+                
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" required><br><br>
+                
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+                
+                    <label for="profesion">Profesión o Cargo:</label>
+                    <input type="text" id="profesion" name="profesion" required><br><br>
+
+                    <input type="submit" value="Enviar">
+                </form>
+                <div id="mensaje_confirmacion" style="display: none;">
+                    <p>¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="empleo.jpg" alt="Imagen de trabajo">
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <footer>
+        <div class="footer-content">
+            <div class="social">
+                <div class="social-icons">
+                    <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="x.png" alt="Twitter"></a>
+                    <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="youtube.png" alt="YouTube"></a>
+                    <a href="#"><img src="tiktok.png" alt="TikTok"></a>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="preuba.png" alt="Logo de tu empresa">
+            </div>
+            <div class="copyright">
+                <p>© 2024 Chigü Juegos. Todos los derechos reservados.</p>
+            </div>
+            <div class="terms">
+                <span>Términos de Servicios</span>
+                 <span class="barra"></span>
+                 <span>Información Legal</span>
+            </div>
+        </div>
+    </footer>
+    
+        <script src="script.js"></script>
+
+</body>
+
+</html>
