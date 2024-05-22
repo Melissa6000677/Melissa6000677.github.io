@@ -154,3 +154,17 @@ document.getElementById("scroll-to-top-button").addEventListener("click", functi
         window.scrollBy(0, scrollStep); // Desplazamiento suave hacia arriba
     }, 20); // Intervalo reducido para una transición más suave
 });
+
+function showCover() {
+    var firstCover = document.getElementById('first-cover');
+    var secondCover = document.getElementById('second-cover');
+    firstCover.style.opacity = '0'; // Oculta la primera imagen
+    secondCover.style.opacity = '1'; // Muestra la segunda imagen
+}
+
+function hideCover() {
+    var firstCover = document.getElementById('first-cover');
+    var secondCover = document.getElementById('second-cover');
+    firstCover.style.opacity = '1'; // Muestra la primera imagen
+    secondCover.style.opacity = '0'; // Oculta la segunda imagen
+}
